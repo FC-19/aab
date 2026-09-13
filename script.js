@@ -1,18 +1,5 @@
-const menu = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.nav');
 const progress = document.querySelector('.progress span');
 const mobileCta = document.querySelector('.mobile-cta');
-
-menu?.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', String(open));
-  menu.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-});
-
-document.querySelectorAll('.nav-links a').forEach((link) => link.addEventListener('click', () => {
-  nav.classList.remove('open');
-  menu?.setAttribute('aria-expanded', 'false');
-}));
 
 document.querySelectorAll('.faq-list details, .curriculum details').forEach((detail) => detail.addEventListener('toggle', () => {
   if (!detail.open) return;
